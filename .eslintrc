@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+  ],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "space-infix-ops": 2,
+    "max-len": [2, 120, 2],
+    "space-before-function-paren": [2, "never"],
+    "jsx-quotes": [2, "prefer-double"],
+    "comma-dangle": [2, "always-multiline"]
+  }
+}

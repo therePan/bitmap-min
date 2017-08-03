@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "> 2%", "IE 9", "safari >= 7"]
+      },
+      "modules": false
+    }],
+    "stage-2",
+    "flow"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "syntax-dynamic-import",
+    "transform-runtime"
+  ]
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <style media="screen">
+    #test {
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" name="image" id="base-image-upload" value="">
+
+  <img src="" id="test" alt="">
+
+  <script src="../dist/bitmap-min-iife.js"></script>
+  <script>
+    !(function() {
+      var bitmapMin = new BitmapMin({
+        type: 'image/jpeg'
+      })
+
+      var $imageInput = document.getElementById('base-image-upload')
+      $imageInput.addEventListener('change', function (ev) {
+        bitmapMin.compress(ev.target.files[0], function(base64, blob) {
+          document.getElementById('test').src = base64
+        })
+      })
+    })();
+  </script>
+</body>
+</html>
