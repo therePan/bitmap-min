@@ -1,6 +1,6 @@
 {
   "name": "bitmap-min",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "基于canvas的轻量级浏览器端位图处理插件 (gif, png, jpeg)",
   "main": "dist/bitmap-min.js",
   "scripts": {
@@ -8,7 +8,9 @@
     "watch": "FORMAT=iife rollup -c -w",
     "browser": "browser-sync start --config bs-config.js",
     "dev": "npm-run-all --parallel watch browser",
-    "build": "rm -rf dist && rollup -c && FORMAT=iife rollup -c"
+    "build": "rm -rf dist && rollup -c && FORMAT=iife rollup -c && FORMAT=umd rollup -c",
+    "babel": "babel src -d lib --plugins transform-es2015-modules-commonjs",
+    "prepublishOnly": "npm-run-all --parallel build babel"
   },
   "repository": {
     "type": "git",

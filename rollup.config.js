@@ -1,5 +1,5 @@
+import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import nodeResolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 
 export default {
@@ -8,8 +8,12 @@ export default {
   moduleName: 'BitmapMin',
   sourceMap: true,
   plugins: [
+    resolve({
+      jsnext: true,
+      main: true,
+      browser: true,
+    }),
     commonjs(),
-    nodeResolve(),
     babel({
       exclude: 'node_modules/**',
       runtimeHelpers: true,
