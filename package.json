@@ -1,6 +1,6 @@
 {
   "name": "bitmap-min",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "基于canvas的轻量级浏览器端位图处理插件 (gif, png, jpeg)",
   "main": "dist/bitmap-min.js",
   "scripts": {
