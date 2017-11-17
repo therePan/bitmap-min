@@ -91,7 +91,7 @@ class BitmapMin {
         oHeight = MAX_HEIGHT
       }
     }
-    return [oWidth, oHeight]
+    return [oWidth || width, oHeight || height]
   }
 }
 

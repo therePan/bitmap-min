@@ -19,12 +19,16 @@
   <script>
     !(function() {
       var bitmapMin = new BitmapMin({
-        type: 'image/jpeg'
+        width: 1024,  // 最大宽度 
+        height: 1024, // 最大高度 
+        jpeg: false,  // 强制转为 jpeg|jpg 
+        quality: .92, // jpeg|jpg 图片的质量 
       })
 
       var $imageInput = document.getElementById('base-image-upload')
       $imageInput.addEventListener('change', function (ev) {
-        bitmapMin.compress(ev.target.files[0], function(base64, blob) {
+        bitmapMin.load(ev.target.files[0], function(base64, blob) {
+          console.log(ev.target.files[0], base64)
           document.getElementById('test').src = base64
         })
       })
